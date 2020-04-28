@@ -1,0 +1,47 @@
+<form (ngSubmit)="onSubmit()" >
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name="name" id="nome" [(ngModel)]="cliente.nome">
+  </div>
+
+  <div class="form-group">
+    <label for="tipo">Tipo</label>
+    <select class="form-control" name="tipo" id="tipo" [(ngModel)]="cliente.tipo">
+      <option value="1">Pessoa física</option>
+      <option value="2">Pessoa jurídica</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Gênero</label>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="genero" id="masculino" [(ngModel)]="cliente.genero" [value]="1">
+      <label class="form-check-label" for="masculino">Masculino</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="genero" id="feminino" [(ngModel)]="cliente.genero" [value]="2">
+      <label class="form-check-label" for="feminino">Feminino</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dataNascimento">Data de nascimento</label>
+    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" [(ngModel)]="cliente.dataNascimento">
+  </div>
+
+  <div class="form-group">
+    <label for="observacao">Observação</label>
+    <textarea class="form-control" rows="3" name="observacao" id="observacao" [(ngModel)]="cliente.observacao"></textarea>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="inativo" id="inativo" [(ngModel)]="cliente.inativo">
+    <label class="form-check-label" for="inativo">Inativo</label>
+  </div>
+
+  <input type="submit" class="btn btn-primary mt-4" value="Salvar">
+  <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+
+</form>
